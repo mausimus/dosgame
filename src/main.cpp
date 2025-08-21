@@ -1,7 +1,10 @@
 #include <allegro.h>
 
-#define GDB_IMPLEMENTATION
-#include "gdbstub.h"
+#include <vector>
+
+#include "gdb.h"
+
+std::vector<int> vec;
 
 /* The fire is formed from several 'hotspots' which are moved randomly
  * across the bottom of the screen.
@@ -11,7 +14,6 @@
 int hotspot[FIRE_HOTSPOTS];
 
 unsigned char *temp;
-
 
 /* This function updates the bottom line of the screen with a pattern
  * of varying intensities which are then moved upwards and faded out
@@ -45,7 +47,9 @@ void draw_bottom_line_of_fire(void) {
 
 
 int main(void) {
-	gdb_start();
+	gdb();
+
+	vec.push_back(5);
 
 	PALETTE palette;
 	uintptr_t address;
