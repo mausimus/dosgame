@@ -1,11 +1,12 @@
-##### Starter DOS Game Project
+## Starter DOS Game Project
 
 * Visual Studio Code + [dos-dev extension](https://marketplace.visualstudio.com/items?itemName=badlogicgames.dos-dev)
 * DJGPP/GCC 12.1.0
 * Allegro 4.2.3.1
 * i586 target
 
-###### Notes
+
+### Notes
 
 Tweaks needed to cross-compile Allegro from Windows using GCC 12:
 
