@@ -1,10 +1,6 @@
 #include <allegro.h>
 
-#include <vector>
-
 #include "gdb.h"
-
-std::vector<int> vec;
 
 /* The fire is formed from several 'hotspots' which are moved randomly
  * across the bottom of the screen.
@@ -48,8 +44,6 @@ void draw_bottom_line_of_fire(void) {
 
 int main(void) {
 	gdb();
-
-	vec.push_back(5);
 
 	PALETTE palette;
 	uintptr_t address;

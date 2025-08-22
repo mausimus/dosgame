@@ -1,1 +1,1 @@
-extern "C" void gdb();
+void gdb();
