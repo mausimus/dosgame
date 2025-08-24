@@ -1,5 +1,6 @@
 #include <allegro.h>
 
+#include "allegro/inline/gfx.inl"
 #include "gdb.h"
 
 /* The fire is formed from several 'hotspots' which are moved randomly
@@ -57,6 +58,19 @@ int main(void) {
 			allegro_message("Error setting graphics mode\n%s\n", allegro_error);
 			return 1;
 		}
+	}
+
+	BITMAP *doom = load_pcx("assets\\efcm.pcx", palette);
+	if (doom == NULL) {
+		textout_ex(screen, font, "Cannot load asset", 0, 0, makecol(255, 255, 255), makecol(0, 0, 0));
+	} else {
+		set_palette(palette);
+		acquire_screen();
+		blit(doom, screen, 0, 0, 0, 0, doom->w, doom->h);
+		release_screen();
+	}
+	while (!keypressed()) {
+		vsync();
 	}
 
 	temp = (unsigned char *) malloc(sizeof(unsigned char) * SCREEN_W);

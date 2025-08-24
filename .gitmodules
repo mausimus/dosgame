@@ -1,0 +1,4 @@
+[submodule "allegro4"]
+	path = allegro4
+	url = https://github.com/liballeg/allegro4.git
+	branch = 4.2
